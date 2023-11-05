@@ -1,7 +1,6 @@
 //Get input labels
 let allLabels = document.getElementsByTagName('label');
 let labelsArr = [allLabels[0],allLabels[1],allLabels[2]];
-console.log(labelsArr)
 // Get input day, month, year
 let userDay = document.getElementById("day");
 let userMonth = document.getElementById("month");
@@ -18,8 +17,22 @@ let resultMonths = document.getElementById('result-months');
 let resultDays = document.getElementById('result-days');
 //function to validate the date
 function validateDate(year,month,date) {
-    let userDate = new Date(year,month - 1,date);
-    return userDate.getFullYear() === year && userDate.getMonth() === (month-1) && userDate.getDate() === date;
+    let userDate = new Date(year,month,date);
+    let DateToday = new Date();
+    if(userDate.getDate() !== date){
+        warningDay.textContent = "Must be a valid date.";
+        warningDay.classList.add('warning');
+    } else if(userDate.getMonth() !== month){
+        warningMonth.textContent = "Must be a valid Month.";
+        warningMonth.classList.add('warning');
+    }else if(userDate.getFullYear() > DateToday.getFullYear()){
+        warningYear.textContent = "Must be in the past.";
+        warningYear.classList.add('warning');
+    } 
+    else {
+        return userDate.getFullYear() === year && userDate.getMonth() === (month-1) && userDate.getDate() === date;
+    }
+    return false; 
 }
 //function to animate the numbers
 function AgeCounter(DomElement, limit){
@@ -73,26 +86,26 @@ let user_month = 0;
 let user_year = 0;
 ageForm.addEventListener("submit",(e) => {
     e.preventDefault();
+    //check length 
+    userInputs.map((e) => {
+        if(e.textContent.length === 0){
+            warnings.map((e) => {
+                e.textContent = "This field is required."
+                e.classList.add('warning');
+            })
+        }
+        else {
+            return;
+        }
+    })
     //perform checks on the value
     user_day = Number(userDay.value);
     user_month = Number(userMonth.value);
     user_year = Number(userYear.value);
     // validation check on the input
-    if(validateDate(user_year,user_month,user_day) === false){
-        warnings.map((e) => {
-            e.textContent = "Must be valid ";
-            e.classList.add("warning");
-        })
-        userInputs.map((e) => {
-            e.classList.add("warning-input");
-        })
-        labelsArr.map((e) => {
-            e.classList.add("warning-label")
-        })
-        warningDay.textContent += "day"; 
-        warningMonth.textContent += "month"; 
-        warningYear.textContent += "year";
-    } else {
+    validateDate(user_year,user_month,user_day);
+    console.log(validateDate(user_year,user_month,user_day));
+    if(validateDate(user_year,user_month,user_day) === true){
         warnings.map((e) => {
             e.classList.remove("warning");
         })
@@ -109,6 +122,14 @@ ageForm.addEventListener("submit",(e) => {
         resultYears.textContent = AgeCounter(resultYears,res_year);
         resultMonths.textContent = AgeCounter(resultMonths,res_month);
         resultDays.textContent = AgeCounter(resultDays,res_day);
+    } 
+    else {
+        if(warningDay.textContent.length === 0 && warningMonth.textContent.length === 0 && warningYear.textContent.length === 0){
+            warningDay.textContent = "Must be a valid date."
+            warningDay.classList.add('warning');
+        }
+        else {
+            return;
+        }
     }
-     
 })

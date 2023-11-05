@@ -14,7 +14,6 @@ This is a solution to the [Age calculator app challenge on Frontend Mentor](http
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 ## Overview
 
 ### The challenge
@@ -38,7 +37,7 @@ Users should be able to:
 ![Desktop-view-error](screenshots/desktop-view-error.png)
 ![Mobile-view-error](screenshots/mobile-view-error.png)
 
-This is was taken on firefox and as such does not support -webkit- classes due to which the -webkit-inner-spin-button, -webkit-outer-spin-button are not supported by it.
+The above 2 images was taken on firefox which does not support -webkit- classes due to which the -webkit-inner-spin-button, -webkit-outer-spin-button are not supported by it.
 
 ![Mobile-view-error-2](screenshots/mobile-view-error-2.png)
 This was taken on a brave browser which does support -webkit- classes and as such no outer/inner-spin-button was seen.
@@ -72,17 +71,5 @@ I want to focus more on animating the numbers more smoothly, (maybe adding a fad
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
-
-
-[def]: ./screenshots/desktop-view.png
+- Website - [Noor Ullah Al Noor](https://frontend-mentor-age-calculator-iota.vercel.app/)
+- Frontend Mentor - [@TheDrifter408](https://www.frontendmentor.io/profile/TheDrifter408)
