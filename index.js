@@ -17,12 +17,12 @@ let resultMonths = document.getElementById('result-months');
 let resultDays = document.getElementById('result-days');
 //function to validate the date
 function validateDate(year,month,date) {
-    let userDate = new Date(year,month,date);
+    let userDate = new Date(year,month-1,date);
     let DateToday = new Date();
     if(userDate.getDate() !== date){
         warningDay.textContent = "Must be a valid date.";
         warningDay.classList.add('warning');
-    } else if(userDate.getMonth() !== month){
+    } else if((userDate.getMonth()) !== (month - 1)){
         warningMonth.textContent = "Must be a valid Month.";
         warningMonth.classList.add('warning');
     }else if(userDate.getFullYear() > DateToday.getFullYear()){
@@ -30,7 +30,7 @@ function validateDate(year,month,date) {
         warningYear.classList.add('warning');
     } 
     else {
-        return userDate.getFullYear() === year && userDate.getMonth() === (month-1) && userDate.getDate() === date;
+        return userDate.getFullYear() === year && (userDate.getMonth()) === (month - 1) && userDate.getDate() === date;
     }
     return false; 
 }
@@ -86,18 +86,6 @@ let user_month = 0;
 let user_year = 0;
 ageForm.addEventListener("submit",(e) => {
     e.preventDefault();
-    //check length 
-    userInputs.map((e) => {
-        if(e.textContent.length === 0){
-            warnings.map((e) => {
-                e.textContent = "This field is required."
-                e.classList.add('warning');
-            })
-        }
-        else {
-            return;
-        }
-    })
     //perform checks on the value
     user_day = Number(userDay.value);
     user_month = Number(userMonth.value);
