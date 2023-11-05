@@ -49,7 +49,7 @@ function validateDate(year,month,date) {
 //function to animate the numbers
 function AgeCounter(DomElement, limit){
     let i=0;
-    const counting = setInterval(Increment,90);
+    const counting = setInterval(Increment,45);
     function Increment() {
         i = i + 1;
         DomElement.textContent = i;
