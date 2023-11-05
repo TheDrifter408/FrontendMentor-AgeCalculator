@@ -44,8 +44,8 @@ This was taken on a brave browser which does support -webkit- classes and as suc
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/TheDrifter408/FrontendMentor-AgeCalculator)
+- Live Site URL: [Vercel Deployment](https://frontend-mentor-age-calculator-iota.vercel.app/)
 
 ## My process
 
@@ -70,6 +70,5 @@ I want to focus more on animating the numbers more smoothly, (maybe adding a fad
 - [Age calculator](https://www.javatpoint.com/calculate-age-using-javascript) - This website helped to make the age calculator more accurate and specific as requried by the challenge.
 
 ## Author
-
-- Website - [Noor Ullah Al Noor](https://frontend-mentor-age-calculator-iota.vercel.app/)
 - Frontend Mentor - [@TheDrifter408](https://www.frontendmentor.io/profile/TheDrifter408)
+- Github - [TheDrifter408](https://github.com/TheDrifter408)
